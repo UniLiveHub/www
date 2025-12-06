@@ -1,0 +1,17 @@
+{
+  "name": "@user-promo-generator",
+  "version": "1.0.0",
+  "description": "Promotional image generator for UniLive user pages",
+  "main": "generate-promo-images.js",
+  "scripts": {
+    "generate": "node generate-promo-images.js",
+    "setup": "npm install"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "qrcode": "^1.5.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+# Promotional Image Languages Configuration
+# List the languages you want for your promotional images, one per line
+# Available languages: english, korea, russia, spanish, chinese, japanese, arabic, french, german, portuguese
+
+english
+korea
+russia
