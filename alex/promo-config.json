@@ -1,0 +1,154 @@
+{
+  "languages": {
+    "korea": {
+      "name": "Korean",
+      "tagline": "세상 무겁 사교에 다가가다",
+      "locale": "ko-KR",
+      "font": "Noto Sans KR",
+      "direction": "ltr"
+    },
+    "russia": {
+      "name": "Russian", 
+      "tagline": "К миру без границ",
+      "locale": "ru-RU",
+      "font": "Roboto",
+      "direction": "ltr"
+    },
+    "english": {
+      "name": "English",
+      "tagline": "To a world without borders",
+      "locale": "en-US",
+      "font": "Inter",
+      "direction": "ltr"
+    },
+    "spanish": {
+      "name": "Spanish",
+      "tagline": "Hacia un mundo sin fronteras",
+      "locale": "es-ES",
+      "font": "Inter",
+      "direction": "ltr"
+    },
+    "arabic": {
+      "name": "Arabic",
+      "tagline": "إلى عالم بلا حدود",
+      "locale": "ar-SA",
+      "font": "Noto Sans Arabic",
+      "direction": "rtl"
+    },
+    "chinese": {
+      "name": "Chinese",
+      "tagline": "走向无国界的世界",
+      "locale": "zh-CN",
+      "font": "Noto Sans SC",
+      "direction": "ltr"
+    },
+    "japanese": {
+      "name": "Japanese",
+      "tagline": "国境のない世界へ",
+      "locale": "ja-JP",
+      "font": "Noto Sans JP",
+      "direction": "ltr"
+    },
+    "portuguese": {
+      "name": "Portuguese",
+      "tagline": "Para um mundo sem fronteiras",
+      "locale": "pt-BR",
+      "font": "Inter",
+      "direction": "ltr"
+    },
+    "french": {
+      "name": "French",
+      "tagline": "Vers un monde sans frontières",
+      "locale": "fr-FR",
+      "font": "Inter",
+      "direction": "ltr"
+    },
+    "german": {
+      "name": "German",
+      "tagline": "Zu einer Welt ohne Grenzen",
+      "locale": "de-DE",
+      "font": "Inter",
+      "direction": "ltr"
+    }
+  },
+  "templates": {
+    "korea": {
+      "background": "korean-temple.jpg",
+      "overlayColor": "rgba(0, 0, 0, 0.3)",
+      "accentColor": "#00E676",
+      "textPosition": {
+        "tagline": { "x": 50, "y": 540, "align": "left", "fontSize": 36 },
+        "username": { "x": 136, "y": 622, "align": "left", "fontSize": 24 },
+        "inviteCode": { "x": 136, "y": 664, "align": "left", "fontSize": 20 }
+      },
+      "qrCode": {
+        "x": 420,
+        "y": 600,
+        "size": 100
+      }
+    },
+    "russia": {
+      "background": "russian-cathedral.jpg",
+      "overlayColor": "rgba(0, 0, 0, 0.4)",
+      "accentColor": "#7DF05D",
+      "textPosition": {
+        "tagline": { "x": 50, "y": 615, "align": "left", "fontSize": 42 },
+        "username": { "x": 148, "y": 935, "align": "left", "fontSize": 26 },
+        "inviteCode": { "x": 148, "y": 998, "align": "left", "fontSize": 22 }
+      },
+      "qrCode": {
+        "x": 505,
+        "y": 895,
+        "size": 120
+      }
+    },
+    "default": {
+      "background": "default-bg.jpg",
+      "overlayColor": "rgba(0, 0, 0, 0.3)",
+      "accentColor": "#7DF05D",
+      "textPosition": {
+        "tagline": { "x": 50, "y": 600, "align": "left", "fontSize": 36 },
+        "username": { "x": 140, "y": 700, "align": "left", "fontSize": 24 },
+        "inviteCode": { "x": 140, "y": 740, "align": "left", "fontSize": 20 }
+      },
+      "qrCode": {
+        "x": 450,
+        "y": 650,
+        "size": 110
+      }
+    }
+  },
+  "styles": {
+    "logo": {
+      "width": 120,
+      "height": 40,
+      "x": 20,
+      "y": 20
+    },
+    "brand": {
+      "text": "UniLive",
+      "x": 50,
+      "y": 500,
+      "fontSize": 48,
+      "fontWeight": "bold",
+      "color": "#FFFFFF"
+    },
+    "avatar": {
+      "size": 80,
+      "borderRadius": 40,
+      "borderWidth": 3
+    },
+    "textShadow": "2px 2px 4px rgba(0, 0, 0, 0.8)",
+    "fontColors": {
+      "primary": "#FFFFFF",
+      "secondary": "#E0E0E0",
+      "accent": "#7DF05D"
+    }
+  },
+  "output": {
+    "format": "png",
+    "quality": 90,
+    "width": 650,
+    "height": 1080
+  }
+}

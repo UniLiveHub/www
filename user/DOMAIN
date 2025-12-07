@@ -1,0 +1,6 @@
+# Custom Domain Configuration
+# Format: DOMAIN_NAME GITHUB_REPO
+# Example: unilive.alex.com git@github.com:alexuser/unilive-landing.git
+# Leave empty or delete this file to use default UniLiveHub domain
+
+%CUSTOM_DOMAIN% %GITHUB_REPO%

@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="Join UniLiveHub - Your Gateway to Web3 Social Earnings with UniLive. Start earning today! UniLiveHub provides professional marketing pages that help you promote UniLive's revolutionary Web3 social platform. Earn crypto rewards through staking, build your network with our 5-level MLM system, and join the future of content creation.">
+<meta name="keywords" content="UniLive, UniMex, OpenSee, SEE tokens, UNX, crypto earning, web3 social, live streaming, TikTok alternative, staking rewards">
+<meta property="og:title" content="UniLive - Earn Crypto While Creating & Watching Content">
+<meta property="og:description" content="Join the Web3 revolution. Earn UniMex and OpenSee tokens daily through content creation, engagement, and staking.">
+<meta property="og:url" content="https://UniLiveHub.com/">
+<meta property="og:site_name" content="UniLiveHub">
+<meta property="og:image" content="https://UniLiveHub.com/images/promo-english.png">
+<meta property="og:image:width" content="841">
+<meta property="og:image:height" content="1400">
+<meta property="og:image:alt" content="UniLiveHub.com">
+<meta property="og:type" content="website">
+<title>UniLive | Earn Crypto Creating Content | Web3 Social Platform</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">

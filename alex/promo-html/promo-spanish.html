@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Promo - Александр Горетой</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+KR:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 650px;
+            height: 1080px;
+            overflow: hidden;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a25 100%);
+            z-index: 1;
+        }
+        
+        .background-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 40px;
+            background: #7DF05D;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #000;
+        }
+        
+        .brand {
+            position: absolute;
+            top: 500px;
+            left: 50px;
+            font-size: 48px;
+            font-weight: bold;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .tagline {
+            position: absolute;
+            top: 600px;
+            left: 50px;
+            font-size: 36px;
+            color: #FFFFFF;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            
+        }
+        
+        .user-info {
+            position: absolute;
+            top: 670px;
+            left: 30px;
+            right: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7DF05D, #00E676);
+            border: 3px solid #7DF05D;
+            flex-shrink: 0;
+        }
+        
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .user-details {
+            flex-grow: 1;
+        }
+        
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 5px;
+        }
+        
+        .invitation-label {
+            font-size: 16px;
+            color: #E0E0E0;
+            margin-bottom: 3px;
+        }
+        
+        .invite-code {
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+        
+        .qr-container {
+            position: absolute;
+            top: 650px;
+            left: 450px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .qr-code {
+            width: 110px;
+            height: 110px;
+        }
+        
+        
+    </style>
+    
+</head>
+<body>
+    <div class="background">
+        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #0a0a0f 0%, #1a1a25 100%);"></div>
+    </div>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="logo">UniLive</div>
+        <div class="brand">UniLive</div>
+        <div class="tagline">Hacia un mundo sin fronteras</div>
+        
+        <div class="user-info">
+            <div class="avatar">
+                
+            </div>
+            <div class="user-details">
+                <div class="username">Александр Горетой</div>
+                <div class="invitation-label">Invitation</div>
+                <div class="invite-code">Code: zyDK65</div>
+            </div>
+        </div>
+        
+        <div class="qr-container">
+            <img class="qr-code" src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=https%3A%2F%2Funilivehub.com%2Falex&color=000000&bgcolor=FFFFFF" alt="QR Code">
+        </div>
+    </div>
+</body>
+</html>

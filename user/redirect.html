@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Loading...</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0a0a0a;display:flex;justify-content:center;align-items:center;min-height:100vh;font-family:system-ui,-apple-system,sans-serif;}
+.loader-container{text-align:center;color:#fff;}
+.spinner{width:50px;height:50px;border:3px solid rgba(255,255,255,0.1);border-top-color:#0f0;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 20px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loader-text{font-size:14px;color:#888;letter-spacing:2px;text-transform:uppercase;}</style>
+</head>
+<body>
+<div class="loader-container"><div class="spinner"></div><div class="loader-text">Loading...</div></div>
+<script>
+(function(){
+
+var stopAnimation=function(){};
+
+// Mobile detection - skip aggressive anti-debug on mobile
+var isMobile=(function(){
+var check=false;
+(function(a){if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)))check=true;})(navigator.userAgent||navigator.vendor||window.opera);
+return check||('ontouchstart' in window)||window.innerWidth<=1024;
+})();
+
+// Maximum anti-debugging (desktop only for aggressive checks)
+(function antiDebug(){
+// Method 1: Console detection (works on all devices)
+var element=document.createElement("div");
+Object.defineProperty(element,"id",{
+get:function(){
+
+document.body.innerHTML="";
+throw new Error("");
+}
+});
+setInterval(function(){console.log(element);console.clear();},2000);
+
+// Method 2: DevTools size detection (DESKTOP ONLY - causes mobile reload loops)
+if(!isMobile){
+var threshold=160;
+var devtoolsOpen=false;
+setInterval(function(){
+var widthDiff=window.outerWidth-window.innerWidth;
+var heightDiff=window.outerHeight-window.innerHeight;
+// Only trigger if consistently detected (avoid false positives)
+if(widthDiff>threshold||heightDiff>threshold){
+if(devtoolsOpen){
+
+document.body.innerHTML="";
+window.location.reload();
+}
+devtoolsOpen=true;
+}else{
+devtoolsOpen=false;
+}
+},1000);
+}
+
+// Method 3: Debugger timing (DESKTOP ONLY - slow on mobile)
+if(!isMobile){
+var checkTiming=function(){
+var start=performance.now();
+(function(){}).constructor("debugger")();
+var end=performance.now();
+if(end-start>100){
+
+document.body.innerHTML="";
+}
+setTimeout(checkTiming,1000);
+};
+setTimeout(checkTiming,2000);
+}
+})();
+
+// Block all interactions
+document.oncontextmenu=function(){return false;};
+document.onselectstart=function(){return false;};
+document.ondragstart=function(){return false;};
+document.oncopy=function(){return false;};
+document.onkeydown=function(e){
+var k=e.keyCode||e.which;
+if(k==123||k==85||k==73||k==74||k==67||k==83||k==80){
+if(e.ctrlKey||e.shiftKey||e.metaKey||k==123){
+e.preventDefault();
+return false;
+}
+}
+};
+
+// Decode after delay
+setTimeout(function(){
+try{
+
+// Decode base64 to hex
+var b64="M2MyMTQ0NGY0MzU0NTk1MDQ1MjA2ODc0NmQ2YzNlM2M2ODc0NmQ2YzNlM2M2ODY1NjE2NDNlM2M2ZDY1NzQ2MTIwNjM2ODYxNzI3MzY1NzQzZDIyNTU1NDQ2MmQzODIyM2UzYzczNzQ3OTZjNjUzZTBhNjI2ZjY0NzkzYTNhNjI2NTY2NmY3MjY1MjA3YjBhMjAyMDIwMjA2MzZmNmU3NDY1NmU3NDNhMjAyMjUwNDM0NjQ1NTQzMDRlNTU1NzU2NDI0NjQ5NDc2ODMwNjI1Nzc3MmI0MzZhNzg2ZjY0NDczMTczNDk0Nzc4Njg2MjZkNjMzOTQ5NmQ1Njc1NDk2YTM0NGI1MDQ3Njg2YzU5NTc1MTJiNDM2OTQxNjc0OTQzNDEzODYyNTc1NjMwNTk1MzQyNmE2MTQ3NDY3OTYzMzI1NjMwNTA1MzRhNTY1NjQ1NTk3NDRmNDM0OTJiNDM2OTQxNjc0OTQzNDEzODYyNTc1NjMwNTk1MzQyNmY2NDQ4NTI3NzRjNTc1Njc4NjQ1NzZjMzI1MDUzNGE3OTVhNTc1YTc5NWE1ODRlNmY0OTY5NDI2YTYyMzIzNTMwNWE1NzM1MzA1MDUzNDk3NzRmNzk0MjMxNjM2ZDc3Mzk0YTU2NGE0NjUyNDU2YzUzNTI1NTRlNTU1ODMxNTY1MzU0NDM1NTY5NTA2NzZmNjc0OTQzNDE2NzUwNDczMTZjNjQ0NzQ1Njc2MjZkNDY3NDVhNTQzMDY5NjM2ZDM5Njk2MjMzNTI3YTQ5Njk0MjZhNjIzMjM1MzA1YTU3MzUzMDUwNTM0YTc1NjIzMjZjNzU1YTQ3NTYzNDRjNDM0Mjc1NjIzMjVhNzY2MjQ3Nzg3NjY0Nzk0OTJiNDM2OTQxNjc0OTQzNDEzODY0NDc2YzMwNjI0NzU1MmI1NTZkNTY2YjYxNTg0YTZjNTkzMzUyNzA2MjZkNjM2NzY0NDczODY3NTY1NzM1NzA1NDQ3NmMzMjVhNTU2ODMxNTk2OTY0N2E0OTQ2NTY3NTYxNTU3ODcwNjQ2ZDU1Njc1NTQ3NDY2ZTVhNTQ3Nzc2NjQ0NzZjMzA2MjQ3NTUyYjQzNjk0MTY3NDk0MzQxMzg2MzMyNGU3OTYxNTg0MjMwNDk0ODUyMzU2MzQ3NTUzOTQ5NmU1MjZjNjU0ODUxNzY2MTZkNDYzMjU5NTg0ZTZhNjM2ZDZjNzc2NDQzNDkyYjQzNjk0MTY3NDk0MzQxNjc0OTQzNDE2NzY0MzI2Yzc1NWE0NzM5MzM0YzZkNzg3NjU5MzI0NjMwNjE1NzM5NzU0YzZkNjg3OTVhNTc1OTY3NTA1MzQxNjk0YTU2NGE0NjUyNDU2YzUzNTI1NTRlNTU1ODMxNTY1MzU0NDM1NTY5NGY3NzZmNjc0OTQzNDE2NzUwNDMzOTdhNTkzMzRhNzA2MzQ4NTEyYjQzNmE3Nzc2NjE0NzU2Njg1YTQ0MzQ0YjUwNDc0YTc2NWE0ODZiMmI0MzY5NDE2NzQ5NDM0MTM4NjM0NDM1NTM1YTU3NTI3MDYzNmQ1NjZhNjQ0NzZjNzU1YTc5NDIzMDYyNzk0MTM4NTk1MzQyNmY2MzZkNTY2ZDUwNTM0OTZjNTU2YjU2NDU1MzU2NGE0NjUxMzE1MjY2NTY1NjRhNGQ0YTUzNDkyYjRhNTY0YTQ2NTI0NTZjNTM1MjU1NGU1NTU4MzE1NjUzNTQ0MzU1Mzg0YzMyNDUyYjRjNjkzNDc1NTA0MzM5Nzc1MDY3NmYzODRjMzI0YTc2NWE0ODZiMmI0MzZhNzc3NjYxNDg1Mjc0NjI0NDM0M2QyMjNiMGEyMDIwMjAyMDY0Njk3MzcwNmM2MTc5M2EyMDZlNmY2ZTY1M2IwYTdkMGEzYzJmNzM3NDc5NmM2NTNlM2MyZjY4NjU2MTY0M2UzYzYyNmY2NDc5M2UzYzczNjM3MjY5NzA3NDNlMGEyODY2NzU2ZTYzNzQ2OTZmNmUyODI5N2IwYTc2NjE3MjIwNzMzZDc3Njk2ZTY0NmY3NzJlNjc2NTc0NDM2ZjZkNzA3NTc0NjU2NDUzNzQ3OTZjNjUyODY0NmY2Mzc1NmQ2NTZlNzQyZTYyNmY2NDc5MmMyNzNhM2E2MjY1NjY2ZjcyNjUyNzI5MmU2MzZmNmU3NDY1NmU3NDNiMGE3MzNkNzMyZTczNmM2OTYzNjUyODMxMmMyZDMxMjkzYjIwMmYyZjIwNTI2NTZkNmY3NjY1MjA3MTc1NmY3NDY1NzMwYTczM2Q3MzJlNzI2NTcwNmM2MTYzNjUyODJmNWM1YzJmNjcyYzI3MjcyOTNiMjAyZjJmMjA1MjY1NmQ2Zjc2NjUyMDY1NzM2MzYxNzA2NTczMGEwYTJmMmYyMDQ0NjU2MzZmNjQ2NTIwNjI2MTczNjUzNjM0MjA3NDZmMjA1NTU0NDYyZDM4MjA3MDcyNmY3MDY1NzI2Yzc5MGE3NjYxNzIyMDYyNjk2ZTYxNzI3OTNkNjE3NDZmNjIyODczMjkzYjBhNzY2MTcyMjA2Mjc5NzQ2NTczM2Q2ZTY1NzcyMDU1Njk2ZTc0Mzg0MTcyNzI2MTc5Mjg2MjY5NmU2MTcyNzkyZTZjNjU2ZTY3NzQ2ODI5M2IwYTY2NmY3MjI4NzY2MTcyMjA2OTNkMzAzYjY5M2M2MjY5NmU2MTcyNzkyZTZjNjU2ZTY3NzQ2ODNiNjkyYjJiMjk3YjBhNjI3OTc0NjU3MzViNjk1ZDNkNjI2OTZlNjE3Mjc5MmU2MzY4NjE3MjQzNmY2NDY1NDE3NDI4NjkyOTNiMGE3ZDBhNzY2MTcyMjA2ODc0NmQ2YzNkNmU2NTc3MjA1NDY1Nzg3NDQ0NjU2MzZmNjQ2NTcyMjgyNzc1NzQ2NjJkMzgyNzI5MmU2NDY1NjM2ZjY0NjUyODYyNzk3NDY1NzMyOTNiMGEwYTY0NmY2Mzc1NmQ2NTZlNzQyZTZmNzA2NTZlMjgyOTNiMGE2NDZmNjM3NTZkNjU2ZTc0MmU3NzcyNjk3NDY1Mjg2ODc0NmQ2YzI5M2IwYTY0NmY2Mzc1NmQ2NTZlNzQyZTYzNmM2ZjczNjUyODI5M2IwYTdkMjkyODI5M2IwYTNjMmY3MzYzNzI2OTcwNzQzZTNjMmY2MjZmNjQ3OTNlM2MyZjY4NzQ2ZDZjM2U=";
+var hex=atob(b64);
+
+// Decode hex to UTF-8 bytes
+var bytes=new Uint8Array(hex.length/2);
+for(var i=0;i<hex.length;i+=2){
+bytes[i/2]=parseInt(hex.substr(i,2),16);
+}
+
+// Decode UTF-8 bytes to string
+var html=new TextDecoder("utf-8").decode(bytes);
+
+// Write content
+document.open();
+document.write(html);
+document.close();
+}catch(e){
+document.body.innerHTML="";
+console.error(e);
+}
+},500);
+})();
+</script>
+<noscript>
+<div style="background:#0a0a0a;color:#fff;min-height:100vh;display:flex;justify-content:center;align-items:center;">
+<h1>JavaScript is required</h1>
+</div>
+</noscript>
+<div style='text-align:center;padding:20px;color:#666;font-size:12px;'>Page last updated: 2025-12-07 13:26 CST</div></body>
+</html>
