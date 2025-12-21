@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - UniLiveHub</title>
+    <meta name="description" content="UniLiveHub Privacy Policy - Learn how we collect, use, and protect your personal information.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://unilivehub.com/privacy">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Privacy Policy - UniLiveHub">
+    <meta property="og:description" content="Learn how UniLiveHub collects, uses, and protects your personal information.">
+    <meta property="og:url" content="https://unilivehub.com/privacy">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-card: #16161d;
+            --green-primary: #7DF05D;
+            --green-dark: #5ac043;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a8;
+            --text-muted: #6b6b75;
+            --border-color: #2a2a35;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+        
+        .logo span {
+            color: var(--green-primary);
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .nav-link:hover {
+            color: var(--green-primary);
+            background: rgba(125, 240, 93, 0.1);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--green-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Content Sections */
+        section {
+            margin-bottom: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--green-primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem;
+        }
+        
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            color: var(--text-secondary);
+            margin: 1rem 0 1rem 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        a {
+            color: var(--green-primary);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+        
+        /* Info Box */
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--green-primary);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .info-box p {
+            margin-bottom: 0;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        th {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        td {
+            color: var(--text-secondary);
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .contact-card h3 {
+            color: var(--green-primary);
+            margin-top: 0;
+        }
+        
+        .contact-email {
+            display: inline-block;
+            background: var(--green-primary);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .contact-email:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(125, 240, 93, 0.3);
+            text-decoration: none;
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--green-primary);
+        }
+        
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 2rem 1rem 4rem;
+            }
+            
+            table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <span class="logo-icon">🦄</span>
+                Uni<span>Live</span>Hub
+            </a>
+            <nav>
+                <a href="/" class="nav-link">Home</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: December 21, 2024</p>
+        </div>
+        
+        <section>
+            <p>UniLiveHub ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website at unilivehub.com and related services (collectively, the "Service").</p>
+            
+            <div class="info-box">
+                <p><strong>By using UniLiveHub, you agree to the collection and use of information in accordance with this policy.</strong> If you do not agree with our policies, please do not use the Service.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>1. Information We Collect</h2>
+            
+            <h3>1.1 Personal Information</h3>
+            <p>When you register for an account or use our Service, we may collect:</p>
+            <ul>
+                <li><strong>Account Information:</strong> Name, email address, username, password, and profile photo</li>
+                <li><strong>Payment Information:</strong> Billing address, payment method details (processed securely by Stripe)</li>
+                <li><strong>Identity Verification:</strong> Government-issued ID and selfie (for Pro plan KYC verification, if applicable)</li>
+                <li><strong>Referral Information:</strong> Your UniLive referral code and referrer information</li>
+                <li><strong>Profile Content:</strong> Bio, social media links, uploaded images and videos</li>
+            </ul>
+            
+            <h3>1.2 Automatically Collected Information</h3>
+            <p>When you access the Service, we automatically collect:</p>
+            <ul>
+                <li><strong>Device Information:</strong> IP address, browser type, operating system, device identifiers</li>
+                <li><strong>Usage Data:</strong> Pages visited, time spent, click patterns, referral sources</li>
+                <li><strong>Cookies:</strong> Session cookies, preference cookies, and analytics cookies</li>
+                <li><strong>Location Data:</strong> Approximate location based on IP address</li>
+            </ul>
+            
+            <h3>1.3 Information from Third Parties</h3>
+            <ul>
+                <li><strong>GitHub:</strong> When you connect your GitHub account, we access your public profile and repository permissions</li>
+                <li><strong>Payment Processors:</strong> Stripe provides us with transaction confirmation and fraud prevention data</li>
+                <li><strong>Analytics Services:</strong> Google Analytics provides aggregated usage statistics</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the collected information for:</p>
+            
+            <table>
+                <tr>
+                    <th>Purpose</th>
+                    <th>Legal Basis</th>
+                </tr>
+                <tr>
+                    <td>Provide and maintain the Service</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Process payments and commissions</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Deploy your referral pages to GitHub Pages</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Track referrals and calculate MLM commissions</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Send transactional emails (account verification, payment receipts)</td>
+                    <td>Contract performance</td>
+                </tr>
+                <tr>
+                    <td>Send marketing communications (with your consent)</td>
+                    <td>Consent</td>
+                </tr>
+                <tr>
+                    <td>Prevent fraud and ensure security</td>
+                    <td>Legitimate interest</td>
+                </tr>
+                <tr>
+                    <td>Analyze usage and improve the Service</td>
+                    <td>Legitimate interest</td>
+                </tr>
+                <tr>
+                    <td>Comply with legal obligations</td>
+                    <td>Legal compliance</td>
+                </tr>
+            </table>
+        </section>
+        
+        <section>
+            <h2>3. Information Sharing and Disclosure</h2>
+            <p>We may share your information with:</p>
+            
+            <h3>3.1 Service Providers</h3>
+            <ul>
+                <li><strong>Stripe:</strong> Payment processing & Payouts</li>
+                <li><strong>NowPayments:</strong> Payment processing & Payouts</li>
+                <li><strong>Supabase:</strong> Database hosting and authentication</li>
+                <li><strong>GitHub:</strong> Page hosting and deployment</li>
+                <li><strong>Resend:</strong> Email delivery</li>
+                <li><strong>Google Analytics:</strong> Usage analytics</li>
+                <li><strong>Netlify:</strong> Website hosting</li>
+            </ul>
+            
+            <h3>3.2 Public Information</h3>
+            <p>The following information is publicly visible on your referral page:</p>
+            <ul>
+                <li>Display name and profile photo</li>
+                <li>Bio and social media links you choose to display</li>
+                <li>Your UniLive referral code</li>
+                <li>Gallery content you upload</li>
+            </ul>
+            
+            <h3>3.3 Referral Network</h3>
+            <p>Your referrer and direct referrals may see limited information about your account status and activity as part of the MLM commission tracking system.</p>
+            
+            <h3>3.4 Legal Requirements</h3>
+            <p>We may disclose information if required by law, court order, or government request, or to protect our rights, property, or safety.</p>
+            
+            <div class="info-box">
+                <p><strong>We do not sell your personal information to third parties.</strong></p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>4. Cookies and Tracking Technologies</h2>
+            <p>We use cookies and similar technologies to:</p>
+            <ul>
+                <li>Keep you signed in to your account</li>
+                <li>Remember your preferences and settings</li>
+                <li>Understand how you use the Service</li>
+                <li>Track referral attribution</li>
+                <li>Prevent fraud and enhance security</li>
+            </ul>
+            
+            <h3>Types of Cookies</h3>
+            <table>
+                <tr>
+                    <th>Cookie Type</th>
+                    <th>Purpose</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td>Essential</td>
+                    <td>Authentication, security</td>
+                    <td>Session</td>
+                </tr>
+                <tr>
+                    <td>Functional</td>
+                    <td>Preferences, language</td>
+                    <td>1 year</td>
+                </tr>
+                <tr>
+                    <td>Analytics</td>
+                    <td>Usage statistics</td>
+                    <td>2 years</td>
+                </tr>
+                <tr>
+                    <td>Referral</td>
+                    <td>Track referral source</td>
+                    <td>30 days</td>
+                </tr>
+            </table>
+            
+            <p>You can control cookies through your browser settings. Disabling certain cookies may affect Service functionality.</p>
+        </section>
+        
+        <section>
+            <h2>5. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your information:</p>
+            <ul>
+                <li><strong>Encryption:</strong> All data transmitted via HTTPS/TLS encryption</li>
+                <li><strong>Password Security:</strong> Passwords are hashed using bcrypt</li>
+                <li><strong>Access Controls:</strong> Role-based access to sensitive data</li>
+                <li><strong>Payment Security:</strong> PCI-DSS compliant payment processing via Stripe</li>
+                <li><strong>KYC Documents:</strong> Encrypted storage with restricted access</li>
+                <li><strong>Regular Audits:</strong> Security reviews and vulnerability assessments</li>
+            </ul>
+            
+            <div class="info-box">
+                <p>While we strive to protect your information, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>6. Data Retention</h2>
+            <p>We retain your information for as long as necessary to provide the Service and fulfill the purposes outlined in this policy:</p>
+            <ul>
+                <li><strong>Account Data:</strong> Until you delete your account, plus 30 days</li>
+                <li><strong>Payment Records:</strong> 7 years (legal/tax requirements)</li>
+                <li><strong>Commission History:</strong> 7 years (legal/tax requirements)</li>
+                <li><strong>KYC Documents:</strong> Deleted after verification approval or 90 days after rejection</li>
+                <li><strong>Usage Logs:</strong> 12 months</li>
+                <li><strong>Backup Data:</strong> 90 days after deletion</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>7. Your Rights</h2>
+            <p>Depending on your location, you may have the following rights:</p>
+            
+            <h3>7.1 All Users</h3>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data</li>
+                <li><strong>Correction:</strong> Update or correct inaccurate information</li>
+                <li><strong>Deletion:</strong> Request deletion of your account and data</li>
+                <li><strong>Portability:</strong> Export your data in a machine-readable format</li>
+                <li><strong>Opt-out:</strong> Unsubscribe from marketing communications</li>
+            </ul>
+            
+            <h3>7.2 EU/EEA Residents (GDPR)</h3>
+            <ul>
+                <li>Right to restrict processing</li>
+                <li>Right to object to processing</li>
+                <li>Right to withdraw consent</li>
+                <li>Right to lodge a complaint with a supervisory authority</li>
+            </ul>
+            
+            <h3>7.3 California Residents (CCPA)</h3>
+            <ul>
+                <li>Right to know what personal information is collected</li>
+                <li>Right to know if personal information is sold or disclosed</li>
+                <li>Right to say no to the sale of personal information</li>
+                <li>Right to non-discrimination for exercising CCPA rights</li>
+            </ul>
+            
+            <p>To exercise any of these rights, contact us at <a href="mailto:privacy@unilivehub.com">privacy@unilivehub.com</a>.</p>
+        </section>
+        
+        <section>
+            <h2>8. International Data Transfers</h2>
+            <p>Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place:</p>
+            <ul>
+                <li>Standard Contractual Clauses for EU data transfers</li>
+                <li>Service providers committed to data protection standards</li>
+                <li>Encryption of data in transit and at rest</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>9. Children's Privacy</h2>
+            <p>The Service is not intended for individuals under 18 years of age. We do not knowingly collect personal information from children. If we become aware that we have collected personal information from a child, we will take steps to delete that information.</p>
+        </section>
+        
+        <section>
+            <h2>10. Third-Party Links</h2>
+            <p>The Service may contain links to third-party websites, including UniLive (unilive.io). We are not responsible for the privacy practices of these external sites. We encourage you to review their privacy policies.</p>
+        </section>
+        
+        <section>
+            <h2>11. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. We will notify you of material changes by:</p>
+            <ul>
+                <li>Posting the updated policy on this page</li>
+                <li>Updating the "Last Updated" date</li>
+                <li>Sending an email notification for significant changes</li>
+            </ul>
+            <p>Your continued use of the Service after changes constitutes acceptance of the updated policy.</p>
+        </section>
+        
+        <section>
+            <h2>12. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+            
+            <div class="contact-card">
+                <h3>Privacy Inquiries</h3>
+                <p>UniLiveHub Privacy Team</p>
+                <a href="mailto:privacy@unilivehub.com" class="contact-email">privacy@unilivehub.com</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/terms">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="mailto:support@unilivehub.com">Contact</a>
+        </div>
+        <p class="copyright">© 2024 UniLiveHub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
